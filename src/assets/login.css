@@ -1,6 +1,6 @@
 .login-container {
   height: 100vh;
-  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  background-image: url("../public/3139256.jpg");
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,5 +8,5 @@
 
 .login-card {
   width: 400px;
-  border-radius: 12px;
+  border-radius: 15px;
 }

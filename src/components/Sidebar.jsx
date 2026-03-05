@@ -1,46 +1,52 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FaTachometerAlt, FaUsers, FaWpforms, FaCog } from "react-icons/fa";
-import "../assets/Sidebar.css";
+import { FaBars, FaTachometerAlt, FaUsers, FaWpforms, FaCog } from "react-icons/fa";
+import "./Sidebar.css";
 
 const Sidebar = () => {
+
+  const [collapsed, setCollapsed] = useState(false);
+
   return (
-    <div className="sidebar">
+    <div className={collapsed ? "sidebar collapsed" : "sidebar"}>
+
+      {/* Toggle Button */}
 
       <div className="sidebar-header">
-        <h4>Admin Panel</h4>
+        <button
+          className="toggle-btn"
+          onClick={() => setCollapsed(!collapsed)}
+        >
+          <FaBars />
+        </button>
       </div>
 
-      <ul className="sidebar-menu">
+      {/* Menu */}
 
-        <li>
-          <NavLink to="/" className="menu-link">
-            <FaTachometerAlt className="icon" />
-            Dashboard
-          </NavLink>
-        </li>
+      <nav className="sidebar-menu">
 
-        <li>
-          <NavLink to="/users" className="menu-link">
-            <FaUsers className="icon" />
-            Users
-          </NavLink>
-        </li>
+        <NavLink to="/" className="menu-item">
+          <FaTachometerAlt />
+          {!collapsed && <span>Dashboard</span>}
+        </NavLink>
 
-        <li>
-          <NavLink to="/forms" className="menu-link">
-            <FaWpforms className="icon" />
-            Forms
-          </NavLink>
-        </li>
+        <NavLink to="/users" className="menu-item">
+          <FaUsers />
+          {!collapsed && <span>Users</span>}
+        </NavLink>
 
-        <li>
-          <NavLink to="/settings" className="menu-link">
-            <FaCog className="icon" />
-            Settings
-          </NavLink>
-        </li>
+        <NavLink to="/forms" className="menu-item">
+          <FaWpforms />
+          {!collapsed && <span>Forms</span>}
+        </NavLink>
 
-      </ul>
+        <NavLink to="/settings" className="menu-item">
+          <FaCog />
+          {!collapsed && <span>Settings</span>}
+        </NavLink>
+
+      </nav>
+
     </div>
   );
 };

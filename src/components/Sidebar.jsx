@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTachometerAlt, FaUsers, FaWpforms, FaCog } from "react-icons/fa";
-import "./Sidebar.css";
+import "../assets/Sidebar.css";
 
 const Sidebar = () => {
 
@@ -10,39 +10,41 @@ const Sidebar = () => {
   return (
     <div className={collapsed ? "sidebar collapsed" : "sidebar"}>
 
-      {/* Toggle Button */}
+      <div className="sidebar-top">
 
-      <div className="sidebar-header">
+        <h3 className="logo">
+          {!collapsed && "Admin Panel"}
+        </h3>
+
         <button
           className="toggle-btn"
           onClick={() => setCollapsed(!collapsed)}
         >
           <FaBars />
         </button>
-      </div>
 
-      {/* Menu */}
+      </div>
 
       <nav className="sidebar-menu">
 
         <NavLink to="/" className="menu-item">
           <FaTachometerAlt />
-          {!collapsed && <span>Dashboard</span>}
+          <span>Dashboard</span>
         </NavLink>
 
         <NavLink to="/users" className="menu-item">
           <FaUsers />
-          {!collapsed && <span>Users</span>}
+          <span>Users</span>
         </NavLink>
 
         <NavLink to="/forms" className="menu-item">
           <FaWpforms />
-          {!collapsed && <span>Forms</span>}
+          <span>Forms</span>
         </NavLink>
 
         <NavLink to="/settings" className="menu-item">
           <FaCog />
-          {!collapsed && <span>Settings</span>}
+          <span>Settings</span>
         </NavLink>
 
       </nav>

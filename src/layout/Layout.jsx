@@ -4,15 +4,15 @@ import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <div className="d-flex">
+    <div className="d-flex vh-100">
 
       <Sidebar />
 
-      <div className="flex-grow-1 bg-light min-vh-100">
+      <div className="flex-grow-1">
 
         <Header />
 
-        <div className="container-fluid p-4">
+        <div className="p-4">
           <Outlet />
         </div>
 
@@ -21,5 +21,3 @@ const Layout = () => {
     </div>
   );
 };
-
-export default Layout;

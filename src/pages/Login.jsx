@@ -28,7 +28,7 @@ const Login = () => {
       formData.password === "123456"
     ) {
       localStorage.setItem("isAuthenticated", "true");
-      navigate("/");
+      navigate("/dashboard");
     } else {
       setError("Invalid Email or Password");
     }

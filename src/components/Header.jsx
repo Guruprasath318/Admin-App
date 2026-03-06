@@ -49,11 +49,14 @@ const Header = () => {
 
           <li>
             <button
-              className="dropdown-item text-danger"
-              onClick={handleLogout}
-            >
-              Logout
-            </button>
+  className="btn btn-outline-danger btn-sm"
+  onClick={() => {
+    localStorage.removeItem("isAuthenticated");
+    window.location.href = "/login";
+  }}
+>
+  Logout
+</button>
           </li>
         </ul>
       </div>

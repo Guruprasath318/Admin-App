@@ -2,21 +2,21 @@ import { Routes, Route } from "react-router-dom";
 import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import Users from "../pages/Users";
-import Layout from "../layout/Layout";
 import Forms from "../pages/Forms";
 import Settings from "../pages/Settings";
+import Layout from "../layout/Layout";
 import ProtectedRoute from "./ProtectedRoute";
 
 const AppRoutes = () => {
   return (
     <Routes>
 
-      {/* Public Route */}
+      {/* Login Page */}
       <Route path="/login" element={<Login />} />
 
-      {/* Protected Routes */}
+      {/* Protected Pages */}
       <Route
-        path="/"
+        path="/dashboard"
         element={
           <ProtectedRoute>
             <Layout />
@@ -28,6 +28,9 @@ const AppRoutes = () => {
         <Route path="forms" element={<Forms />} />
         <Route path="settings" element={<Settings />} />
       </Route>
+
+      {/* 404 Page */}
+      <Route path="*" element={<h2>404 Page Not Found</h2>} />
 
     </Routes>
   );

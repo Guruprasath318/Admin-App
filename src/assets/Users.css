@@ -143,3 +143,11 @@
   background:#2563eb;
   color:white;
 }
+
+.modal-content {
+  border-radius: 10px;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f1f5ff;
+}

@@ -27,22 +27,22 @@ const Sidebar = () => {
 
       <nav className="sidebar-menu">
 
-        <NavLink to="/" className="menu-item">
+        <NavLink to="/dashboard" className="menu-item">
           <FaTachometerAlt />
           <span>Dashboard</span>
         </NavLink>
 
-        <NavLink to="/users" className="menu-item">
+        <NavLink to="/dashboard/users" className="menu-item">
           <FaUsers />
           <span>Users</span>
         </NavLink>
 
-        <NavLink to="/forms" className="menu-item">
+        <NavLink to="/dashboard/forms" className="menu-item">
           <FaWpforms />
           <span>Forms</span>
         </NavLink>
 
-        <NavLink to="/settings" className="menu-item">
+        <NavLink to="/dashboard/settings" className="menu-item">
           <FaCog />
           <span>Settings</span>
         </NavLink>
